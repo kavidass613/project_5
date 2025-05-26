@@ -3,11 +3,11 @@
         <div class="m-3">
             <label>ID</label>
             <input class="form-control" type="text" formControlName="id" placeholder="id"> 
-            @if (studentsForm.controls["id"] ?. dirty || studentsForm.controls["id"] ?.touched) {
-                @if (studentsForm.controls["id"] ?. errors ?. ["required"]) {
+            @if (studentsForm.controls["id"] . dirty || studentsForm.controls["id"] .touched) {
+                @if (studentsForm.controls["id"] . errors ?. ["required"]) {
                     <p class="text-danger">ID IS REQUIRED</p>
                 }
-                @if (studentsForm.controls["id"] ?. errors ?. ["pattern"]) {
+                @if (studentsForm.controls["id"] . errors ?. ["pattern"]) {
                     <p class="text-danger">CHECK THE PATTERN TYPE</p>
                 }
             }
@@ -15,11 +15,11 @@
         <div class="m-3">
             <label>NAME</label>
             <input class="form-control" type="text" formControlName="name" placeholder="name"> 
-            @if (studentsForm.controls["name"] ?. dirty || studentsForm.controls["name"] ?.touched) {
-                @if (studentsForm.controls["name"] ?. errors ?. ["required"]) {
+            @if (studentsForm.controls["name"] . dirty || studentsForm.controls["name"] .touched) {
+                @if (studentsForm.controls["name"] . errors ?. ["required"]) {
                     <p class="text-danger">NAME IS REQUIRED</p>
                 }
-                @if (studentsForm.controls["id"] ?. errors ?. ["pattern"]) {
+                @if (studentsForm.controls["id"] . errors ?. ["pattern"]) {
                     <p class="text-danger">CHECK THE PATTERN TYPE</p>
                 }
             }
@@ -27,11 +27,11 @@
         <div class="m-3">
             <label>MOBILE-NUMBER</label>
             <input class="form-control" type="text" formControlName="mobilenumber" placeholder="mobilenumber"> 
-            @if (studentsForm.controls["mobilenumber"] ?. dirty || studentsForm.controls["mobilenumber"] ?.touched) {
-                @if (studentsForm.controls["mobilenumber"] ?. errors ?. ["required"]) {
+            @if (studentsForm.controls["mobilenumber"] . dirty || studentsForm.controls["mobilenumber"] .touched) {
+                @if (studentsForm.controls["mobilenumber"] . errors ?. ["required"]) {
                     <p class="text-danger">MOBILE-NUMBER IS REQUIRED</p>
                 }
-                @if (studentsForm.controls["mobilenumber"] ?. errors ?. ["pattern"]) {
+                @if (studentsForm.controls["mobilenumber"] . errors ?. ["pattern"]) {
                     <p class="text-danger">CHECK THE PATTERN TYPE</p>
                 }
             }
