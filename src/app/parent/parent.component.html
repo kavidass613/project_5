@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 text-center mt-5">
+            <app-child [child]="parent" (childData)="reciveData($event)"></app-child>
+        </div>
+        <div class="col-6 text-center mt-5">
+            <h3>PARENT</h3>
+            <p>{{data}}</p>
+        </div>
+    </div>
+</div>

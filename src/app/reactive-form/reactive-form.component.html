@@ -1,0 +1,55 @@
+<div class="container">
+    <form class="w-50 mx-auto border p-3" [formGroup]="studentsForm" (ngSubmit)="onSubmit()">
+        <div class="m-3">
+            <label>ID</label>
+            <input class="form-control" type="text" formControlName="id" placeholder="id"> 
+            @if (studentsForm.controls["id"] ?. dirty || studentsForm.controls["id"] ?.touched) {
+                @if (studentsForm.controls["id"] ?. errors ?. ["required"]) {
+                    <p class="text-danger">ID IS REQUIRED</p>
+                }
+                @if (studentsForm.controls["id"] ?. errors ?. ["pattern"]) {
+                    <p class="text-danger">CHECK THE PATTERN TYPE</p>
+                }
+            }
+        </div>
+        <div class="m-3">
+            <label>NAME</label>
+            <input class="form-control" type="text" formControlName="name" placeholder="name"> 
+            @if (studentsForm.controls["name"] ?. dirty || studentsForm.controls["name"] ?.touched) {
+                @if (studentsForm.controls["name"] ?. errors ?. ["required"]) {
+                    <p class="text-danger">NAME IS REQUIRED</p>
+                }
+                @if (studentsForm.controls["id"] ?. errors ?. ["pattern"]) {
+                    <p class="text-danger">CHECK THE PATTERN TYPE</p>
+                }
+            }
+        </div>
+        <div class="m-3">
+            <label>MOBILE-NUMBER</label>
+            <input class="form-control" type="text" formControlName="mobilenumber" placeholder="mobilenumber"> 
+            @if (studentsForm.controls["mobilenumber"] ?. dirty || studentsForm.controls["mobilenumber"] ?.touched) {
+                @if (studentsForm.controls["mobilenumber"] ?. errors ?. ["required"]) {
+                    <p class="text-danger">MOBILE-NUMBER IS REQUIRED</p>
+                }
+                @if (studentsForm.controls["mobilenumber"] ?. errors ?. ["pattern"]) {
+                    <p class="text-danger">CHECK THE PATTERN TYPE</p>
+                }
+            }
+        </div>
+        <div formArrayName="skills">
+            <button class="btn btn-success" (click)="addSkill()">ADD</button>
+            <div *ngFor="let skill of skills.controls; let i=index">
+                <div [formGroupName]="i">
+                    {{i+1}} , <input type="text" formControlName="skill"> 
+                    <button class="btn btn-success m-3" (click)="deleteData(i)">DELETE</button>
+                </div>
+            </div>
+        </div>
+        <div class="m-3 text-center">
+            <button class="btn btn-success m-3" [disabled]="studentsForm.invalid">SUBMIT</button>
+            <button class="btn btn-success m-3" (click)="setVlues()">SET-VALUES</button>
+            <button class="btn btn-success m-3" (click)="pathchValues()">PATCH-VALUES</button>
+            <button class="btn btn-success m-3" (click)="resetValues()">RESET-VALUES</button>
+        </div>
+    </form>
+</div>

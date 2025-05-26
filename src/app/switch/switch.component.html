@@ -1,0 +1,79 @@
+<div class="container">
+    <h2 class="text-center">NG-SWITCH</h2>
+    <div class="row mt-5">
+        <div class=" text-center">
+            <button class="btn btn-success m-3" (click)="grade(1)">GRADE-A</button>
+            <button class="btn btn-success m-3" (click)="grade(2)">GRADE-B</button>
+            <button class="btn btn-success m-3" (click)="grade(3)">GRADE-C</button>
+        </div>
+        <div class=" text-center" [ngSwitch]="value">
+            <p *ngSwitchCase="1">VERY GOOD</p>
+            <p *ngSwitchCase="2">GOOD</p>
+            <p *ngSwitchCase="3">AVERAGE</p>
+            <p *ngSwitchDefault="">NOT FOUND</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="text-center mt-5">SWITCH</h2>
+        <div class="row text-center mt-5">
+            <div>
+                <button class="btn btn-success m-3" (click)="grade1(1)">GRADE-A</button>
+                <button class="btn btn-success m-3" (click)="grade1(2)">GRADE-B</button>
+                <button class="btn btn-success m-3" (click)="grade1(3)">GRADE-C</button> 
+            </div>
+        <div>
+            @switch (value1) {
+                @case (1) {
+                    <p>VERRY GOOD</p>
+                }
+                @case (2) {
+                    <p>GOOD</p>
+                }
+                @case (3) {
+                    <P>AVERAGE</P>
+                }
+                @default {
+                    NOT FOUND
+                }
+            }
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="text-center mt-5">
+        <select name="" id="" [(ngModel)]="data">
+            <option [value]="day" *ngFor="let day of days">{{day}}</option>
+        </select>
+        <div>
+            @switch (data) {
+                @case ("mon") {
+                    <p>hello mom</p>
+                }
+                @case ("tue") {
+                    <p>hello tue</p>
+                }
+                @case ("wed") {
+                    <p>hello wed</p>
+                }
+                @case ("the") {
+                    <p>hello the</p>
+                }
+                @case ("fri") {
+                    <p>hello fri</p>
+                }
+                @case ("sat") {
+                    <p>hello sat</p>
+                }
+                @case ("sun") {
+                    <p>hello sun</p>
+                }
+                @default {
+                    <p>not found</p>
+                }
+            }
+        </div>
+    </div>
+</div>

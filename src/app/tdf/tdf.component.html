@@ -1,0 +1,46 @@
+<div class="container">
+    <form class="w-50 mx-auto border p-3" #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)">
+        <div class="m-3">
+            <label>ID</label>
+            <input class="form-control" type="text" [(ngModel)]="studentData.id" name="id" placeholder="ID" #id="ngModel" required="" pattern="^[0-9]*$">
+            @if (id?.dirty || id?.touched) {
+                @if (id?.errors ?. ["required"]) {
+                    <p class="text-danger">ID IS REQUIRED</p>
+                }
+                @if (id?.errors ?.["pattern"]) {
+                    <p class="text-danger">CHECK THE PATTERN TYPE</p>
+                }
+            }
+        </div>
+        <div class="m-3">
+            <label>NAME</label>
+            <input class="form-control" type="text" [(ngModel)]="studentData.name" name="name" placeholder="NAME" #name="ngModel" required="" pattern="^[a-zA-Z]+$">
+            @if (name?.dirty || name?.touched) {
+                @if (name?.errors ?. ["required"]) {
+                    <p class="text-danger">ID IS REQUIRED</p>
+                }
+                @if (name?.errors ?.["pattern"]) {
+                    <p class="text-danger">CHECK THE PATTERN TYPE</p>
+                }
+            }
+        </div>
+        <div class="m-3">
+            <label>MOBILE-NUMBER</label>
+            <input class="form-control" type="text" [(ngModel)]="studentData.mobilenumber" name="mobilenumber" placeholder="MOBILE-NUMBER" #mobilenumber="ngModel" required="" pattern="^[0-9]*$">
+            @if (mobilenumber?.dirty || mobilenumber?.touched) {
+                @if (mobilenumber?.errors ?. ["required"]) {
+                    <p class="text-danger">ID IS REQUIRED</p>
+                }
+                @if (mobilenumber?.errors ?.["pattern"]) {
+                    <p class="text-danger">CHECK THE PATTERN TYPE</p>
+                }
+            }
+        </div>
+        <div>
+            <button class="btn btn-success m-3" [disabled]="studentForm.invalid">SUBMIT</button>
+            <button class="btn btn-success m-3" (click)="setValues(studentForm)">SET-VALUES</button>
+            <button class="btn btn-success m-3" (click)="patchValues(studentForm)">PATCH-VALUES</button>
+            <button class="btn btn-success m-3" (click)="resetValues(studentForm)">RESET-VALUES</button>
+        </div>
+    </form>
+</div>
