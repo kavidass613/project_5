@@ -1,0 +1,41 @@
+<div class="container">
+    <h2 class="text-center mt-5">NG-CLASS</h2>
+    <div class="row mt-5">
+        <div class="col-4 text-center">
+            <h4 [ngClass]="textColor ">HELLO WORLD</h4>
+            <button class="btn btn-success m-3"(click)="green('text-success')">GREEN</button>
+            <button class="btn btn-primary m-3" (click)="blue('text-primary')">BLUE</button>
+        </div>
+
+        <div class="col-4 text-center">
+            <h4 [ngClass]="checkBox ? 'text-success' : 'text-primary'">HELLO WORLD</h4>
+            <input type="checkbox" [(ngModel)]="checkBox">
+        </div>
+
+        <div class="col-4 text-center">
+            <h4 [ngClass]="optionalColor">HELLO WORLD</h4>
+            <input type="text" [(ngModel)]="optionalColor" placeholder="EX:text-center">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="text-center mt-5">NG-STYLE</h2>
+    <div class="row mt-5">
+        <div class="col-4 text-center">
+            <h4 [ngStyle]="{'color': textColor1}">HELLO WORLD</h4>
+            <button class="btn btn-success m-3" (click)="green1('green')">GREEN</button>
+            <button class="btn btn-primary m-3" (click)="blue1('blue')">BLUE</button>
+        </div>
+
+        <div class="col-4 text-center">
+            <h4 [ngStyle]="{'color' : checkBox1 ? 'green' : 'blue'}">HELLO WORLD</h4>
+            <input type="checkbox" [(ngModel)]="checkBox1">
+        </div>
+
+        <div class="col-4 text-center">
+            <h4 [ngStyle]="{'color' :optionalColor1}">HELLO WORLD</h4>
+            <input type="text" [(ngModel)]="optionalColor1" placeholder="EX:orange">
+        </div>
+    </div>
+</div>

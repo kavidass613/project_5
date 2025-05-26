@@ -1,0 +1,54 @@
+<div class="container">
+    <h2 class="text-center">NG-IF</h2>
+    <div class="row mt-5">
+        <div class="col-4 text-center">
+            <h4 *ngIf="text">HELLO WORLD</h4>
+            <button class="btn btn-success m-3" (click)="show()">SHOW</button>
+            <button class="btn btn-success m-3" (click)="hide()">HIDE</button>
+        </div>
+
+        <div class="col-4 text-center">
+            <h4 *ngIf="text1">HELLO WORLD</h4>
+            <input type="checkbox" [(ngModel)]="text1">
+        </div>
+
+        <div class="col-4 text-center">
+            <input class="m-2" type="text" [(ngModel)]="input1">
+            <input class="m-2" type="text" [(ngModel)]="input2">
+            <p *ngIf="input1==input2">BOTH ARE SAME</p>
+            <P *ngIf="input1!=input2">BOTH ARE NOT SAME</P>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="text-center mt-5">IF</h2>
+    <div class="row">
+        <div class="col-4 text-center">
+            @if (text2) {
+                <h4>HELLO WORLD</h4>
+            }
+            <button class="btn btn-success m-3" (click)="show2()">SHOW</button>
+            <button class="btn btn-success m-3" (click)="hide2()">HIDE</button>
+        </div>
+
+        <div class="col-4 text-center m-2">
+            @if (checBox2) {
+                <h4>HELLO WORLD</h4>
+            }
+            <input type="checkbox"[(ngModel)]="checBox2">
+
+        </div>
+
+        <div class="col-4 text-center">
+            <input class="m-2" type="text"[(ngModel)]="input3">
+            <input class="m-2" type="text"[(ngModel)]="input4">
+            @if (input3==input4) {
+                <p>BOTH ARE SAME</p>
+            }
+            @else if (input3!=input4) {
+                <p>BOTH ARE NOT SAME</p>
+            }
+        </div>
+    </div>
+</div>
