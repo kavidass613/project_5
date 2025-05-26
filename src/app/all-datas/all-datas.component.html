@@ -1,0 +1,28 @@
+<div class="container">
+    <table class="table table-success">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>MOBILE NUMBER</th>
+            <th>UPDATE</th>
+            <th>VIEW</th>
+            <th>DELETE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allDatas">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.mobilenumber}}</td>
+            <td><button class="btn btn-success" (click)="update(data._id)">UPDATE</button></td>
+            <td><button class="btn btn-success" (click)="viewData(data._id)">VIEW</button></td>
+            <td><button class="btn btn-success" (click)="deleteData(data._id)">DELETE</button></td>
+        </tr>
+    </tbody>
+    </table>
+
+    <div class="text-center">
+        <button class="btn btn-success" (click)="addDetails()" >ADD-DETAILS</button>
+    </div>
+</div>

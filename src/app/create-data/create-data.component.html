@@ -1,0 +1,20 @@
+<div class="container">
+    <form [formGroup]="studentForm" class="w-50 mx-auto border p-3 mt-3" (ngSubmit)="onSubmit()">
+        <div class="m-3">
+            <label for="">ID</label>
+            <input class="form-control" type="text" formControlName="id" placeholder="id">
+        </div>
+        <div class="m-3">
+            <label for="">NAME</label>
+            <input class="form-control" type="text" formControlName="name" placeholder="name">
+        </div>
+        <div class="m-3">
+            <label for="">MOBILE-NUMBER</label>
+            <input class="form-control" type="text" formControlName="mobilenumber" placeholder="mobilenumber">
+        </div>
+        <div>
+            <button class="btn btn-success m-3" type="submit" [disabled]="studentForm.invalid">ADD</button>
+            <button class="btn btn-danger m-3" (click)="cancel()">CANCEL</button>
+        </div>
+    </form>
+</div>
